@@ -10,3 +10,9 @@
     margin-top: 118px;
     justify-items: center;
 }
+
+@media screen and (max-width:1100px){
+    .products{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
