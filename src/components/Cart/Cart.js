@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cart.css'
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, children }) => {
     let quantity = 0;
     let total = 0;
     let shipping = 0;
@@ -21,6 +21,7 @@ const Cart = ({ cart }) => {
             <p>Total shiping: ${shipping}</p>
             <p>Tax: ${tax}</p>
             <p>Grand Total: ${grandTotal}</p>
+            {children}
         </div>
     );
 };
