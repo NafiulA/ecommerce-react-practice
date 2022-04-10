@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import googleLogo from '../../images/googleLogo.png';
 import auth from '../../firebase.init';
@@ -8,6 +8,10 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [SignInWithEmailAndPassword, user, error] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
     }
@@ -17,6 +21,9 @@ const Login = () => {
     const handleLogin = (event) => {
         event.preventDefault();
         SignInWithEmailAndPassword(email, password);
+    }
+    if (user) {
+        navigate(from, { replace: true });
     }
     return (
         <div className='form-container'>

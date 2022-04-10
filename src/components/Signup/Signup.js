@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Signup.css';
 import googleLogo from '../../images/googleLogo.png';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -10,6 +10,10 @@ const Signup = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
 
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
@@ -33,7 +37,9 @@ const Signup = () => {
 
         createUserWithEmailAndPassword(email, password);
     }
-
+    if (user) {
+        navigate(from, { replace: true });
+    }
     return (
         <div className='form-container'>
             <div>
