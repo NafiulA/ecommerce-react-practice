@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBqVrHX7CTCK-GEWLI3j4NVR0FkZDvv2bQ",
-    authDomain: "router-firebase-integrat-30d5a.firebaseapp.com",
-    projectId: "router-firebase-integrat-30d5a",
-    storageBucket: "router-firebase-integrat-30d5a.appspot.com",
-    messagingSenderId: "908406073595",
-    appId: "1:908406073595:web:bbcbda1ce6a1f4fd0ce85e"
+    apiKey: "AIzaSyDuZpgIrM3ToaEizJJ2OiaBHNxbuvgq2aU",
+    authDomain: "ema-john-shop-223a3.firebaseapp.com",
+    projectId: "ema-john-shop-223a3",
+    storageBucket: "ema-john-shop-223a3.appspot.com",
+    messagingSenderId: "943071387403",
+    appId: "1:943071387403:web:c19c7f7bcbc44964568c0e"
 };
 
 // Initialize Firebase
