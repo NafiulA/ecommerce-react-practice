@@ -7,7 +7,7 @@ import Product from '../Product/Product';
 import './Shop.css'
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(5);
@@ -24,7 +24,7 @@ const Shop = () => {
                 const pages = Math.ceil(count / size);
                 setPageCount(pages);
             })
-    }, [size])
+    }, [size]);
 
     const handleAddToCart = (selectedProduct) => {
         let newCart = [];
