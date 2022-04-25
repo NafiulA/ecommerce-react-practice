@@ -13,15 +13,15 @@ const Orders = () => {
     const navigate = useNavigate();
 
     const handleRemoveProduct = product => {
-        const rest = cart.filter(item => item.id !== product.id);
+        const rest = cart.filter(item => item._id !== product._id);
         setCart(rest);
-        removeFromDb(product.id);
+        removeFromDb(product._id);
     }
     return (
         <div className='shop-container'>
             <div className='item-container'>
                 {
-                    cart.map(product => <ReviewItem key={product.id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItem>)
+                    cart.map(product => <ReviewItem key={product._id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItem>)
                 }
             </div>
             <div className='cart-container'>
