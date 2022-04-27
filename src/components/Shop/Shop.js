@@ -12,12 +12,12 @@ const Shop = () => {
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(5);
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${page}&size=${size}`)
+        fetch(`https://dry-thicket-49468.herokuapp.com/products?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [page, size]);
     useEffect(() => {
-        fetch("http://localhost:5000/productCount")
+        fetch("https://dry-thicket-49468.herokuapp.com/productCount")
             .then(res => res.json())
             .then(data => {
                 const count = data.count;

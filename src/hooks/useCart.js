@@ -7,7 +7,7 @@ const useCart = () => {
         const storedCart = getStoredCart();
         const savedCart = [];
         const keys = Object.keys(storedCart);
-        fetch('http://localhost:5000/productByKeys', {
+        fetch('https://dry-thicket-49468.herokuapp.com/productByKeys', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
